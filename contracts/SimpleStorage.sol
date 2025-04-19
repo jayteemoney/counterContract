@@ -1,9 +1,17 @@
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract SimpleStorage {
-    uint private storedNumber;
+    // State variable to store a number
+    uint256 private storedNumber;
 
-    event()
+    // Function to set the number
+    function setNumber(uint256 _number) public {
+        storedNumber = _number;
+    }
+
+    // Function to get the stored number
+    function getNumber() public view returns (uint256) {
+        return storedNumber;
+    }
 }
