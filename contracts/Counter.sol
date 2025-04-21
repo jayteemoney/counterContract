@@ -12,22 +12,18 @@ contract Counter{
 
     event countChanged(address indexed sender, uint _count, string changed);
 
-    modifier onlyOwner{
-        require(msg.sender == owner);
-        _;
-    }
 
 
-    function increment() external onlyOwner {  // function name is "increment"
+    function increment() external {  // function name is "increment"
         count++; 
         emit countChanged(msg.sender,count,"incremented");
                       // increments the counter value by one (as we are doing in memory)
     }
 
-    function decrement() external onlyOwner {
+    function decrement() external {
         count --;
     }
-    function getCount() external onlyOwner view returns (uint) {
+    function getCount() external view returns (uint) {
        return count;   // returning current value of the counter
     }
 
